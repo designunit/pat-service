@@ -1,25 +1,26 @@
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 
-# static test pattern
+# static test pattern (*Rhombus (band) 1 [line 26])
 _pattern = [(60, 0, 0, 1.5, 0.8660254, 2, -2),
             (120, 1, 0, 0.5, 0.8660254, 2, -2)]
 
 
-def draw_by_pattern():
-    draw.line()
+# main function for drawing
+def draw_by_pattern(img_obj):
+    drawing_object = ImageDraw.Draw(img_obj)
+    #                   x1, y1, x2, y2
+    drawing_object.line((0, 0, 300, 300), fill=128)
+    drawing_object.line((0, 300, 300, 0), fill=128)
+
+    del drawing_object
     return None
 
 
 # create an object-image
-base_image = Image.new('RGB', (300, 300), (255, 255, 255))
+image_object = Image.new('RGB', (300, 300), (255, 255, 255))
 
-draw = ImageDraw.Draw(base_image)
-
-print(base_image.size)
-
-draw.line((0, 0) + base_image.size, fill=128)
-draw.line((0, base_image.size[0], base_image.size[1], 0), fill=128)
-del draw
+# draw lines
+draw_by_pattern(image_object)
 
 # save changes to object-image
-base_image.save("test.jpeg", "jpeg")
+image_object.save("test.jpeg", "jpeg")
