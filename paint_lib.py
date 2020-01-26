@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw
-import png
+from main import vector
 
 
 def draw_by_pattern_JPEG(pattern, img_size, color_background=(255, 255, 255)):
@@ -8,33 +8,20 @@ def draw_by_pattern_JPEG(pattern, img_size, color_background=(255, 255, 255)):
     drawing_object = ImageDraw.Draw(img_object)
 
     for obj in pattern:
+        width = img_size[0]
+        height = img_size[1]
+        vector.x1 = obj[1]
+        vector.y1 = obj[2]
+        vector.x2 = obj[1]
+        vector.y2 = obj[2]
 
-        for i in obj[1::1]:
-            for j in obj:
-                drawing_object.line((i, i, i, i), fill=0, width=1)
+        # line to the right
+        drawing_object.line((vector.x1, vector.y1, width * 2, vector.y1), fill=255, width=1)
+        # line to the left
+        drawing_object.line((vector.x1, vector.y1, -width * 2, vector.y1), fill=0, width=1)
 
     del drawing_object
     # save changes to object-image
     img_object.save("test.jpeg", "jpeg")
 
     return None
-
-# def draw_by_pattern_PNG():
-#     """main function for drawing PNG"""
-#     image_object = open("test1.png", "wb")
-#     writer = png.Writer(256, 256)
-#     writer.write(image_object)
-#     image_object.close()
-#     for obj in pattern:
-#         _radians = math_lib.get_radians(obj[0])
-#         print(math_lib.get_coordinates(_radians))
-#
-#     for i in range(0, img_size[0], 1):
-#         # x1, y1, x2, y2
-#         drawing_object.line((i, i, i, i), fill=0, width=1)
-#
-#     del drawing_object
-#     # save changes to object-image
-#     image_object.save("test.jpeg", "jpeg")
-#
-#     return None

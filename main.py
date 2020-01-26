@@ -1,20 +1,29 @@
-from PIL import Image
-
 import paint_lib
 
 
-class Args_struct:
+# class Args_struct:
+#
+#     def __init__(self, ):
+#         self._angle
+#
+#     _angle = obj[0]  # first value   = angle
+#     x1 = obj[1]  # second value  = starting line point X Coordinate
+#     y1 = obj[2]  # third value   = starting line point Y Coordinate
+#     horizontal_shift = obj[3]  # fourth value  = horizontal shift along line direction
+#     vertical_shift = obj[4]  # fifth value   = next line shift perpendicular to line direction
+#     mark_length = obj[5]  # sixth value   = mark length
+#     gap_length = obj[6]  # gap length (usually negative)
 
-    def __init__(self, ):
-        self._angle
+class vector:
+    def __init__(self, x1_arg, y1_arg, x2_arg, y2_arg):
+        self.x1 = x1_arg
+        self.y1 = y1_arg
+        self.x2 = x2_arg
+        self.y2 = y2_arg
 
-    _angle = obj[0]  # first value   = angle
-    x1 = obj[1]  # second value  = starting line point X Coordinate
-    y1 = obj[2]  # third value   = starting line point Y Coordinate
-    horizontal_shift = obj[3]  # fourth value  = horizontal shift along line direction
-    vertical_shift = obj[4]  # fifth value   = next line shift perpendicular to line direction
-    mark_length = obj[5]  # sixth value   = mark length
-    gap_length = obj[6]  # gap length (usually negative)
+    def direction(self):
+        if self.x2 > 0:
+            return
 
 # create an object-image
 if __name__ == '__main__':
