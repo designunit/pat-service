@@ -9,5 +9,4 @@ def get_radians(degrees):
 
 def get_coordinates(radians):
     """"""
-
     return math.sin(radians)
