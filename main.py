@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw
-import math
+import math_lib
 
 
 # *Hatch 1x45
@@ -11,19 +11,19 @@ import math
 # sixth value   = mark length
 # seventh value = gap length (usually negative)
 
-def get_rotation(angle):
-    return angle
-
+# _pattern = [(45, 0, 0, 0, 1)]
 
 # main function for drawing
-def draw_by_pattern(img_obj, pattern_list):
+def draw_by_pattern(img_obj, pattern):
     drawing_object = ImageDraw.Draw(img_obj)
 
-    for obj in pattern_list:
+    for obj in pattern:
+        _radians = math_lib.get_radians(obj[0])
+
+        print(math_lib.get_coordinates(_radians))
         # x1, y1, x2, y2
-        print(get_rotation(obj[0]))
-        # drawing_object.line((0, 0, 0, 1), fill=0, width=1)
-        # drawing_object.line((0, 300, 300, 0), fill=0, width=1)
+        drawing_object.line((0, 0, 0, 1), fill=0, width=1)
+        drawing_object.line((0, 300, 300, 0), fill=0, width=1)
 
     del drawing_object
     return None
