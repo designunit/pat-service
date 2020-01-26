@@ -2,15 +2,19 @@ from PIL import Image
 
 import paint_lib
 
-# *Hatch 1x45
-# first value   = angle
-# second value  = starting line point X Coordinate
-# third value   = starting line point Y Coordinate
-# fourth value  = next line shift along the line direction (relative to X Y coordinates)
-# fifth value   = next line shift perp. to line direction (angle +90°)
-# sixth value   = mark length
-# seventh value = gap length (usually negative)
-# _pattern = [(45, 0, 0, 0, 1)]
+
+class Args_struct:
+
+    def __init__(self, ):
+        self._angle
+
+    _angle = obj[0]  # first value   = angle
+    x1 = obj[1]  # second value  = starting line point X Coordinate
+    y1 = obj[2]  # third value   = starting line point Y Coordinate
+    horizontal_shift = obj[3]  # fourth value  = horizontal shift along line direction
+    vertical_shift = obj[4]  # fifth value   = next line shift perpendicular to line direction
+    mark_length = obj[5]  # sixth value   = mark length
+    gap_length = obj[6]  # gap length (usually negative)
 
 # create an object-image
 if __name__ == '__main__':
