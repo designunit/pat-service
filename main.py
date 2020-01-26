@@ -16,9 +16,8 @@ import paint_lib
 if __name__ == '__main__':
     # test variables/ must be inputted from console later on
     _pattern = [(45, 0, 0, 0, 1)]
-    _white_background = (255, 255, 255)
     _img_size = (20, 20)
 
     # draw lines
-    # paint_lib.draw_by_pattern_JPEG(_img_size, _white_background)
-    paint_lib.draw_by_pattern_PNG()
+    paint_lib.draw_by_pattern_JPEG(_pattern, _img_size)
+    # paint_lib.draw_by_pattern_PNG()
