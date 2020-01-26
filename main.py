@@ -1,4 +1,5 @@
-from PIL import Image, ImageDraw
+from PIL import Image
+
 import paint_lib
 
 # *Hatch 1x45
@@ -13,15 +14,11 @@ import paint_lib
 
 # create an object-image
 if __name__ == '__main__':
+    # test variables/ must be inputted from console later on
     _pattern = [(45, 0, 0, 0, 1)]
     _white_background = (255, 255, 255)
-
-    img_size = (20, 20)  # this must be inputted within console
-    image_object = Image.new('RGB', img_size, _white_background)
+    _img_size = (20, 20)
 
     # draw lines
-    paint_lib.draw_by_pattern(image_object, _pattern, img_size)
-
-    # save changes to object-image
-    image_object.save("test.jpeg", "jpeg")
-
+    # paint_lib.draw_by_pattern_JPEG(_img_size, _white_background)
+    paint_lib.draw_by_pattern_PNG()
