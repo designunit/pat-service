@@ -15,3 +15,8 @@ class Vector:
         self.x *= length
         self.y *= length
         return self
+
+    def perpendicular_shift(self):
+        self.x += -100
+        self.y += 100
+        return self
