@@ -5,5 +5,5 @@ class Pattern:
         self.y = y
         self.line_shift_along = along
         self.line_shift_perp = perpendicular
-        self.line_length = length
-        self.gap_length = gap
+        self.dash = [length]
+        self.dash = [gap]
