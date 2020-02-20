@@ -4,7 +4,7 @@
 ;second value  = starting line point X Coordinate
 ;third value   = starting line point Y Coordinate
 ;fourth value  = next line shift along the line direction (relative to X Y coordinates) 
-;fifth value   = next line shift perp. to line direction (angle +90°)
+;fifth value   = next line shift perpendicular to line direction (angle +90°)
 ;sixth value   = mark length
 ;seventh value = gap length (usually negative)
 *Hatch 1x45
