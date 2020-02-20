@@ -1,4 +1,5 @@
 import math_lib
+import math
 
 from PIL import Image, ImageDraw
 from vector import Vector
@@ -15,10 +16,11 @@ def draw_by_pattern_JPEG(test_pattern, img_size, background_color):
     local_pattern = PatternLine(test_pattern[0], origin,  test_pattern[3], test_pattern[4],
                                 test_pattern[5], test_pattern[6])
 
-    scaled_vector = math_lib.from_angle(img_size[0], local_pattern.angle)
+    scaled_vector = math_lib.from_angle(math.radians(local_pattern.angle))
+    vector_length = img_size[0] * 2
 
     # basis scaled_vector
-    drawing_object.line((origin.x, origin.y, scaled_vector.x, scaled_vector.y), fill = 255, width = 10)
+    drawing_object.line((origin.x, origin.y, scaled_vector.x * vector_length, scaled_vector.y * vector_length), fill = 255, width = 10)
     # opposite direction to the scaled_vector
     drawing_object.line((origin.x, origin.y, -scaled_vector.x, -scaled_vector.y), fill = 255, width = 10)
 
