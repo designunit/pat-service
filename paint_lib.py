@@ -19,9 +19,10 @@ def draw_by_pattern_JPEG(test_pattern, img_size, background_color):
     default_direction = (img_size[0], 0)
     rotated_direction = math_lib.get_coordinates(img_size[0], 45)
 
-    local_vector = Vector(default_direction[0], rotated_direction, pattern_origin_x, pattern_origin_y)
+    origin = Vector(0, 0)
+    local_vector = Vector(default_direction[0], rotated_direction)
     # basis local_vector
-    drawing_object.line((local_vector.origin_x, local_vector.origin_y, local_vector.i, local_vector.j), fill = 255, width = 10)
+    drawing_object.line((origin.x, origin.y, local_vector.x, local_vector.y), fill = 255, width = 10)
     # opposite direction to the local_vector
     # drawing_object.line((local_vector.origin_x, local_vector.origin_y, -local_vector.i, -local_vector.j), fill = 255, width = 10)
 
