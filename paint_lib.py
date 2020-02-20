@@ -16,14 +16,14 @@ def draw_by_pattern_JPEG(test_pattern, img_size, background_color):
     # line_length = test_pattern[5]
     # gap_length = test_pattern[6]
 
-    i_scalar = img_size[0]
-    j_scalar = img_size[1]
+    default_direction = (img_size[0], 0)
+    rotated_direction = math_lib.get_coordinates(img_size[0], 45)
 
-    vector = Vector(i_scalar/2, j_scalar/2, pattern_origin_x, pattern_origin_y)
-
-    drawing_object.line((vector.origin_x, vector.origin_y, vector.i_scalar, vector.j_scalar), fill = 255, width = 10)
-    # line to the opposite side
-    # drawing_object.line((vector.origin_x, vector.origin_y, -vector.i_scalar, -vector.j_scalar), fill = 0, width = 10)
+    local_vector = Vector(default_direction[0], rotated_direction, pattern_origin_x, pattern_origin_y)
+    # basis local_vector
+    drawing_object.line((local_vector.origin_x, local_vector.origin_y, local_vector.i, local_vector.j), fill = 255, width = 10)
+    # opposite direction to the local_vector
+    # drawing_object.line((local_vector.origin_x, local_vector.origin_y, -local_vector.i, -local_vector.j), fill = 255, width = 10)
 
     del drawing_object
 
