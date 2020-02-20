@@ -1,3 +1,4 @@
 .idea/
 *.jpeg
 __pycache__
+.gitignore
