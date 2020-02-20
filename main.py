@@ -5,7 +5,7 @@ if __name__ == '__main__':
     # test variables/ must be inputted from console later on
     white_background = (255, 255, 255)
     black_background = (0, 0, 0)
-    test_pattern = (45, 0, 0, 0, 1)
+    test_pattern = (45, 0, 0, 0, 1, 0, 0)
     image_size = (500, 500)
 
     paint_lib.draw_by_pattern_JPEG(test_pattern, image_size, white_background)
