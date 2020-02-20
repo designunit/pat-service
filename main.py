@@ -14,23 +14,15 @@ import paint_lib
 #     mark_length = obj[5]  # sixth value   = mark length
 #     gap_length = obj[6]  # gap length (usually negative)
 
-class vector:
-    def __init__(self, x1_arg, y1_arg, x2_arg, y2_arg):
-        self.x1 = x1_arg
-        self.y1 = y1_arg
-        self.x2 = x2_arg
-        self.y2 = y2_arg
-
-    def direction(self):
-        if self.x2 > 0:
-            return
 
 # create an object-image
 if __name__ == '__main__':
     # test variables/ must be inputted from console later on
-    _pattern = [(45, 0, 0, 0, 1)]
-    _img_size = (20, 20)
+    white_background = (255, 255, 255)
+    pattern = [(45, 0, 0, 0, 1)]
+    image_size = (10, 10)
 
     # draw lines
-    paint_lib.draw_by_pattern_JPEG(_pattern, _img_size)
+    paint_lib.draw_by_pattern_JPEG(pattern, image_size, white_background)
+
     # paint_lib.draw_by_pattern_PNG()
