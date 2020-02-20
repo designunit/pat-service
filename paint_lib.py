@@ -15,9 +15,7 @@ def draw_by_pattern_JPEG(test_pattern, img_size, background_color):
     local_pattern = PatternLine(test_pattern[0], origin,  test_pattern[3], test_pattern[4],
                                 test_pattern[5], test_pattern[6])
 
-    x_y = math_lib.rotate_vector_sin_cos(img_size[0], local_pattern.angle)
-
-    scaled_vector = Vector(x_y[0], x_y[1])
+    scaled_vector = math_lib.from_angle(img_size[0], local_pattern.angle)
 
     # basis scaled_vector
     drawing_object.line((origin.x, origin.y, scaled_vector.x, scaled_vector.y), fill = 255, width = 10)
