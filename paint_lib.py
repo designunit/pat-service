@@ -1,6 +1,7 @@
 from PIL import Image, ImageDraw
 from Vector import Vector
 import math_lib
+import math
 
 
 def draw_by_pattern_JPEG(test_pattern, img_size, background_color):
@@ -16,11 +17,11 @@ def draw_by_pattern_JPEG(test_pattern, img_size, background_color):
     # line_length = test_pattern[5]
     # gap_length = test_pattern[6]
 
-    default_direction = (img_size[0], 0)
-    rotated_direction = math_lib.get_coordinates(img_size[0], 45)
+    x_y = math_lib.rotate_vector_sin_cos(img_size[0], 45)
 
     origin = Vector(0, 0)
-    local_vector = Vector(default_direction[0], rotated_direction)
+    # local_vector = Vector(default_direction[0], rotated_direction)
+    local_vector = Vector(x_y[0], x_y[1])
     # basis local_vector
     drawing_object.line((origin.x, origin.y, local_vector.x, local_vector.y), fill = 255, width = 10)
     # opposite direction to the local_vector

@@ -1,18 +1,11 @@
 import math
 
 
-def get_radians(degrees):
-    """converts degrees to radians"""
-    radians = math.radians(degrees)
-    return radians
-
-
-def get_coordinates(direction, radians):
-    """gets direction for the vector"""
-    print(math.tan(get_radians(radians)))
-    return direction * math.tan(get_radians(radians))
-
-
-def get_vector_origin(image_size):
-    return image_size / 2
+def rotate_vector_sin_cos(image_size, degrees):
+    """rotates the vector"""
+    x_y = [0, 0]
+    angle = math.radians(degrees)
+    x_y[0] = math.cos(angle) * image_size
+    x_y[1] = math.sin(angle) * image_size
+    return x_y
 
