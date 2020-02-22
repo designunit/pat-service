@@ -5,4 +5,3 @@ class PatternLine:
         self.line_shift_along = along
         self.line_shift_perp = perpendicular
         self.dash = [length, gap]
-

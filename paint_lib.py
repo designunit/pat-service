@@ -17,14 +17,16 @@ def draw_by_pattern_JPEG(test_pattern, img_size, background_color):
 
     scaled_vector = Vector.from_angle(math.radians(local_pattern.angle))
     scaled_vector.multiply(img_size[0] * 2)
+
     # basis scaled_vector
-    drawing_object.line((origin.x, origin.y, scaled_vector.x, scaled_vector.y), fill=255, width=10)
+    drawing_object.line((origin.x, origin.y, scaled_vector.x, scaled_vector.y), fill = 0, width = 1)
 
     # opposite direction to the scaled_vector
-    scaled_vector.multiply(1)
-    scaled_vector.perpendicular_shift()
-    origin.perpendicular_shift()
-    drawing_object.line((origin.x, origin.y, scaled_vector.x, scaled_vector.y), fill=0, width=10)
+    for i in range(0, img_size[0]):
+        shift = 10
+        origin.perpendicular_shift(shift)
+        scaled_vector.perpendicular_shift(shift)
+        drawing_object.line((origin.x, origin.y, scaled_vector.x, scaled_vector.y), fill = 0, width = 1)
 
     # save changes to object-image
     local_image.save("test.jpeg", "jpeg")

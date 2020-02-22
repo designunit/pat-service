@@ -3,6 +3,7 @@ import math
 
 class Vector:
     def __init__(self, x, y):
+        """basic vector object"""
         self.x = x
         self.y = y
 
@@ -12,11 +13,16 @@ class Vector:
         return Vector(math.cos(radians), math.sin(radians))
 
     def multiply(self, length):
+        """scales vector in two directions"""
         self.x *= length
         self.y *= length
         return self
 
-    def perpendicular_shift(self):
-        self.x += -100
-        self.y += 100
+    def perpendicular_shift(self, shift_value):
+        """shifts another vector perpendicularly"""
+        self.x += -shift_value
+        self.y += shift_value
+        return self
+
+    def draw_lines(self, origin, vector):
         return self
