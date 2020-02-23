@@ -24,3 +24,9 @@ class Vector:
         self.y += shift_value
         return self
 
+    def paint_pattern(self, origin, img_size, shift, drawing_object):
+        for i in range(0, img_size):
+            drawing_object.line((origin.x, origin.y, self.x, self.y), fill=0, width=1)
+            origin.perpendicular_shift(shift)
+            self.perpendicular_shift(shift)
+        return None

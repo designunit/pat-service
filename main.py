@@ -1,7 +1,7 @@
 import paint_lib
 
 
-if __name__ == '__main__':
+def main():
     # test variables/ must be inputted from console later on
     white_background = (255, 255, 255)
     black_background = (0, 0, 0)
@@ -12,3 +12,7 @@ if __name__ == '__main__':
     # paint_lib.draw_by_pattern_JPEG(test_pattern, image_size, black_background)
 
     # paint_lib.draw_by_pattern_PNG()
+
+
+if __name__ == '__main__':
+    main()
