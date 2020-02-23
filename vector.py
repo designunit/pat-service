@@ -24,5 +24,3 @@ class Vector:
         self.y += shift_value
         return self
 
-    def draw_lines(self, origin, vector):
-        return self
