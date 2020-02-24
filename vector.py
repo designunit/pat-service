@@ -24,8 +24,9 @@ class Vector:
         self.y += shift_value
         return self
 
-    def paint_image_out(self, origin, length, shift_value, drawing_object):
+    def paint_image_out(self, jpeg_origin, length, shift_value, drawing_object):
         """paints the image"""
+        origin = jpeg_origin
         self.multiply(length * 2)
         for i in range(0, length):
             drawing_object.line((origin.x, origin.y, self.x, self.y), fill=0, width=1)
