@@ -17,6 +17,23 @@ class Vector:
         self.x *= length
         self.y *= length
         return self
+    
+    def add(self, vector):
+        """add vector"""
+        self.x += vector.x
+        self.y += vector.y
+        return self
+    
+    def get_normal(self):
+        """get right (or left) normal"""
+        return Vector(-self.y, self.x)
+#         return Vector(self.y, -self.x)
+
+    def set_mag(self, value):
+        pass
+    
+    def get_length(self):
+        pass
 
     def perpendicular_shift(self, shift_value):
         """shifts another vector perpendicularly"""
