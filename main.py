@@ -4,7 +4,7 @@ import paint_lib
 def main():
     # test variables/ must be inputted from console later on
     white_background = (255, 255, 255)
-    black_background = (0, 0, 0)
+    # black_background = (0, 0, 0)
     test_pattern = (45, 0, 0, 0, 1, 0, 0)
     image_size = (500, 500)
 
